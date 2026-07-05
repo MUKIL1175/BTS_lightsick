@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>BTS BOMB Lightstick</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation / Status -->
+  <header class="header-bar">
+    <div class="status-indicator">
+      <span class="dot" id="connDot"></span>
+      <span class="status-text" id="connText">Disconnected</span>
+    </div>
+    <h1 class="logo">BTS BOMB</h1>
+    <button id="battBtn" class="batt-badge">
+      <span class="bolt">⚡</span> <span id="battVal">--</span>%
+    </button>
+  </header>
+
+  <!-- Power & Quick Controls -->
+  <section class="power-bar">
+    <button id="powerOnBtn" class="power-btn on">ON</button>
+    <button id="powerOffBtn" class="power-btn off">OFF</button>
+    <button id="idleBtn" class="action-btn idle">IDLE GLOW</button>
+  </section>
+
+  <!-- Tabs Navigation -->
+  <nav class="tabs-nav">
+    <button class="tab-link active" data-tab="members">✨ Members</button>
+    <button class="tab-link" data-tab="effects">🎨 Effects</button>
+    <button class="tab-link" data-tab="combos">🎵 Sound Sync</button>
+  </nav>
+
+  <!-- Main Dashboard Contents -->
+  <main class="dashboard">
+
+    <!-- TAB 1: MEMBERS -->
+    <div class="tab-content active" id="tab-members">
+      <div class="grid">
+        <button class="member-card" data-i="0" style="--c:#9B59B6"><span class="name">RM</span></button>
+        <button class="member-card" data-i="1" style="--c:#FFC0CB"><span class="name">Jin</span></button>
+        <button class="member-card" data-i="2" style="--c:#B0B0B0"><span class="name">Suga</span></button>
+        <button class="member-card" data-i="3" style="--c:#FFD700"><span class="name">J-Hope</span></button>
+        <button class="member-card" data-i="4" style="--c:#FF699C"><span class="name">Jimin</span></button>
+        <button class="member-card" data-i="5" style="--c:#4B3221"><span class="name">V</span></button>
+        <button class="member-card" data-i="6" style="--c:#009BDE"><span class="name">Jungkook</span></button>
+      </div>
+    </div>
+
+    <!-- TAB 2: CUSTOM EFFECTS -->
+    <div class="tab-content" id="tab-effects">
+      
+      <!-- Color Picker Panel -->
+      <div class="panel">
+        <h2 class="panel-title">Choose Color</h2>
+        <div class="color-picker-container">
+          <!-- Quick presets -->
+          <div class="color-presets">
+            <button class="preset-dot" style="background:#9B59B6" data-hex="#9b59b6"></button>
+            <button class="preset-dot" style="background:#FFC0CB" data-hex="#ffc0cb"></button>
+            <button class="preset-dot" style="background:#FFD700" data-hex="#ffd700"></button>
+            <button class="preset-dot" style="background:#FF699C" data-hex="#ff699c"></button>
+            <button class="preset-dot" style="background:#009BDE" data-hex="#009bde"></button>
+            <button class="preset-dot" style="background:#2ecc71" data-hex="#2ecc71"></button>
+            <button class="preset-dot" style="background:#e74c3c" data-hex="#e74c3c"></button>
+          </div>
+          <!-- Native styled color picker -->
+          <div class="picker-wrapper">
+            <input type="color" id="colorInput" value="#9b59b6">
+            <span class="picker-label">Custom Picker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duration Panel -->
+      <div class="panel">
+        <div class="panel-header-inline">
+          <h2 class="panel-title">Speed / Duration</h2>
+          <span class="value-display" id="durValue">2.0s</span>
+        </div>
+        <div class="slider-container">
+          <span class="slider-bound">0.2s</span>
+          <input type="range" id="durSlider" min="0.2" max="5.0" step="0.1" value="2.0">
+          <span class="slider-bound">5.0s</span>
+        </div>
+      </div>
+
+      <!-- Lighting Effects Grid -->
+      <div class="panel">
+        <div class="panel-header-inline">
+          <h2 class="panel-title">Light Patterns</h2>
+          <button id="startPatternBtn" class="mode-btn">▶ Activate</button>
+        </div>
+        <div class="effects-grid">
+          <button class="effect-card" data-fx="solid">
+            <span class="fx-icon">💡</span>
+            <span class="fx-name">Solid</span>
+          </button>
+          <button class="effect-card" data-fx="strobe">
+            <span class="fx-icon">⚡</span>
+            <span class="fx-name">Strobe</span>
+          </button>
+          <button class="effect-card" data-fx="fade_in">
+            <span class="fx-icon">📈</span>
+            <span class="fx-name">Fade In</span>
+          </button>
+          <button class="effect-card" data-fx="fade_out">
+            <span class="fx-icon">📉</span>
+            <span class="fx-name">Fade Out</span>
+          </button>
+          <button class="effect-card" data-fx="breath">
+            <span class="fx-icon">💨</span>
+            <span class="fx-name">Breath</span>
+          </button>
+          <button class="effect-card" data-fx="rotate_cw">
+            <span class="fx-icon">🔄</span>
+            <span class="fx-name">Rotate CW</span>
+          </button>
+          <button class="effect-card" data-fx="rotate_ccw">
+            <span class="fx-icon">🔄</span>
+            <span class="fx-name">Rotate CCW</span>
+          </button>
+          <button class="effect-card" data-fx="drop_fill_cw">
+            <span class="fx-icon">📥</span>
+            <span class="fx-name">Fill CW</span>
+          </button>
+          <button class="effect-card" data-fx="drop_fill_ccw">
+            <span class="fx-icon">📥</span>
+            <span class="fx-name">Fill CCW</span>
+          </button>
+          <button class="effect-card" data-fx="mid_fill">
+            <span class="fx-icon">↔️</span>
+            <span class="fx-name">Mid Expand</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 3: AUDIO-VISUAL COMBO EFFECTS -->
+    <div class="tab-content" id="tab-combos">
+      <div class="combos-list">
+        
+        <button class="combo-card" data-fx="combo_siren" style="--c:#e74c3c">
+          <span class="music-badge">🎵</span>
+          <div class="combo-content">
+            <span class="combo-icon">🚨</span>
+            <div class="combo-info">
+              <h3>Police Siren</h3>
+              <p>Alternating police flashers with sweeping alarm tones</p>
+            </div>
+          </div>
+        </button>
+
+        <button class="combo-card" data-fx="combo_sparkle" style="--c:#f1c40f">
+          <span class="music-badge">🎵</span>
+          <div class="combo-content">
+            <span class="combo-icon">✨</span>
+            <div class="combo-info">
+              <h3>Sparkle Synth</h3>
+              <p>Vibrant random sparkles with an ascending arpeggio chime</p>
+            </div>
+          </div>
+        </button>
+
+        <button class="combo-card" data-fx="combo_rhythm" style="--c:#e84393">
+          <span class="music-badge">🎵</span>
+          <div class="combo-content">
+            <span class="combo-icon">💓</span>
+            <div class="combo-info">
+              <h3>Rhythm Beat</h3>
+              <p>Deep pink heartbeat pulses synchronized with low-bass beats</p>
+            </div>
+          </div>
+        </button>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
