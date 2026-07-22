@@ -1,0 +1,4 @@
+BTS Light Stick (version 3) by 3DPrintBunny on Thingiverse: https://www.thingiverse.com/thing:4549472
+
+Summary:
+This is a copy of the BTS light stick version 3. It stands about 20cm tall.It's a model so doesn't have a light in it but is hollow if you want to add one.The pieces slot together but need gluing to stay in place.Use the easy print white ball file if you are not confident with supports.See all my other designs by clicking on my profileSupport me through Patreon: www.patreon.com/3DPrintBunnyInstagram @3DPrintBunnyAll my KPop designs along with other designers work can be found in the KPop 3d Printing group here: https://www.thingiverse.com/groups/kpop-3d-printing
